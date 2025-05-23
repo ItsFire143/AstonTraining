@@ -37,11 +37,11 @@ public class FeedCats {
 
       while(!allCatsFill) {
          allCatsFill = true;
-         Cat[] var1 = cats;
-         int var2 = var1.length;
+         Cat[] catArr = cats;
+         int catLen = catArr.length;
 
-         for(int var3 = 0; var3 < var2; ++var3) {
-            Cat cat = var1[var3];
+         for(int i = 0; i < catLen; ++i) {
+            Cat cat = catArr[i];
             if (!cat.takeFull()) {
                boolean full = cat.eat(bowl);
                if (!full) {
