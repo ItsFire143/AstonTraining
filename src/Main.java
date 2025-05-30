@@ -21,5 +21,17 @@ public class Main {
 
        StudentManager.printStudents(students, 2);
 
+      
+       PhoneBook pb = new PhoneBook();
+       pb.add("Павлов", "123-456");
+       pb.add("Семенов", "987-654");
+       pb.add("Павлов", "555-555");
+
+       System.out.println("Павлов: " + pb.get("Павлов"));
+
+       System.out.println("Семенов: " + pb.get("Семенов"));
+
+       System.out.println("Сидоров: " + pb.get("Сидоров"));
+
    }
 }
