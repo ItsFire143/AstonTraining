@@ -1,21 +1,25 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
    public static void main(String[] args) {
+       Set<Student> students = new HashSet<>();
+       students.add(new Student("Иван", "ПКС-319", 3, Arrays.asList(4, 3, 5)));
+       students.add(new Student("Мария", "ОСА-218", 2, Arrays.asList(2, 3, 2)));
+       students.add(new Student("Павел", "ИС-217", 2, Arrays.asList(3, 4, 3)));
+       students.add(new Student("Ольга", "ПСО-119", 1, Arrays.asList(5, 5, 5)));
 
-       Park park = new Park();
+       System.out.println("До ");
+       students.forEach(System.out::println);
 
-       park.addAttraction("Пивной ларек", "10:00-22:00", 75.59);
+       StudentManager.removeStudent(students);
+       StudentManager.upStudent(students);
 
-       List<Park.Attraction> attract = new ArrayList<>();
-       attract.add(park.new Attraction("Ларек с шавермой", "12:00-20:00", 156.0));
-       attract.add(park.new Attraction("Туалет", "00:00-00:01", 100.50));
+       System.out.println("После ");
+       students.forEach(System.out::println);
 
-       park.addAttractions(attract);
+       System.out.println();
 
-       for (Park.Attraction attraction : park.getAttractions()) {
-           System.out.println(attraction);
-       }
+       StudentManager.printStudents(students, 2);
+
    }
 }
